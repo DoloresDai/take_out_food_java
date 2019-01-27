@@ -22,9 +22,10 @@ public class Dishes {
     }
 
     public void getItems() {
-        String[] itemsArr = new String[3];
+        String[] dishesArr = new String[3];
         IntStream.range(0, dishes.length).filter(i -> this.id.equals(dishes[i][1])).forEach(i -> {
             this.name = dishes[i][0];
+
             this.price = Integer.parseInt(dishes[i][2]);
         });
     }

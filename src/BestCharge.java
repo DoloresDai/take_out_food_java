@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class BestCharge {
     public static void main(String[] args) {
         String[] idArr = getDishesId();
@@ -9,7 +7,7 @@ public class BestCharge {
         int sumOriginalPrice = orders.sumOriginalPrice;
         int sumHalfPrice = orders.sumHalfPrice;
         int sumLessPrice = orders.sumLessPrice;
-        StringBuffer halfItems = orders.halfItems;
+        StringBuffer halfItems = orders.halfOrders;
         Tool.print("-----------------------------------");
         printSaleDetails(sumHalfPrice, sumLessPrice, sumOriginalPrice, halfItems);
         Tool.print("===================================");
