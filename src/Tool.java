@@ -19,11 +19,11 @@ public class Tool {
      * @return - Array converted to numerical form
      */
     static int[] convertToIntArr(String[] numStringArr) {
-        int[] numArr = new int[numStringArr.length];
+        int[] dishesArr = new int[numStringArr.length];
         for (int i = 0; i < numStringArr.length; i++) {
-            numArr[i] = Integer.parseInt(numStringArr[i]);
+            dishesArr[i] = Integer.parseInt(numStringArr[i]);
         }
-        return numArr;
+        return dishesArr;
     }
 
     /**
