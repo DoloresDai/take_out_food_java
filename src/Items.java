@@ -21,6 +21,14 @@ public class Items {
         this.num = num;
     }
 
+    public void getItems() {
+        String[] itemsArr = new String[3];
+        IntStream.range(0, items.length).filter(i -> this.id.equals(items[i][1])).forEach(i -> {
+            this.name = items[i][0];
+            this.price = Integer.parseInt(items[i][2]);
+        });
+    }
+
     public void isHalf() {
         IntStream.range(0, halfItems.length).filter(i -> !this.sale).forEach(i -> {
             this.sale = this.id.equals(halfItems[i]);
@@ -29,13 +37,5 @@ public class Items {
 
     public void countOriginalPrice() {
         this.originalPrice = this.price * this.num;
-    }
-
-    public void getItems() {
-        String[] itemsArr = new String[3];
-        IntStream.range(0, items.length).filter(i -> this.id.equals(items[i][1])).forEach(i -> {
-            this.name = items[i][0];
-            this.price = Integer.parseInt(items[i][2]);
-        });
     }
 }
