@@ -6,29 +6,29 @@ public class Orders {
     int sumOriginalPrice;
     int sumHalfPrice;
     int sumLessPrice;
-    StringBuffer halfItems = new StringBuffer();
+    StringBuffer halfOrders = new StringBuffer();
 
     Orders(String[] idArr, int[] numArr) {
         for (int j = 0; j < idArr.length; j++) {
-            Dishes dishes = new Dishes(idArr[j], numArr[j]);
-            dishes.getItems();
-            dishes.isHalf();
-            dishes.countOriginalPrice();
-            dishes.countHalfPrice();
-            Tool.print(dishes.name + " x " + dishes.num + " = " + String.valueOf(dishes.price * dishes.num) + "元");
-            this.sumOriginalPrice += dishes.originalPrice;
-            this.sumHalfPrice += dishes.halfPrice;
-            if (dishes.sale) {
+            Dishes dish = new Dishes(idArr[j], numArr[j]);
+            dish.getItems();
+            dish.isHalf();
+            dish.countOriginalPrice();
+            dish.countHalfPrice();
+            Tool.print(dish.name + " x " + dish.num + " = " + String.valueOf(dish.price * dish.num) + "元");
+            this.sumOriginalPrice += dish.originalPrice;
+            this.sumHalfPrice += dish.halfPrice;
+            if (dish.sale) {
                 try {
-                    halfItems = halfItems.append(dishes.name + ",");
+                    halfOrders = halfOrders.append(dish.name + ",");
                 } catch (NullPointerException e) {
                     Tool.print("空指针" + e);
                 }
             }
         }
         try {
-            if (!halfItems.equals("")) {
-                halfItems.setLength(halfItems.length() - 1);
+            if (!halfOrders.equals("")) {
+                halfOrders.setLength(halfOrders.length() - 1);
             }
         } catch (NullPointerException e) {
             Tool.print("空指针" + e);
