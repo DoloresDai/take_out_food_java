@@ -21,6 +21,12 @@ public class Items {
         this.num = num;
     }
 
+    public void isHalf() {
+        IntStream.range(0, halfItems.length).filter(i -> !this.sale).forEach(i -> {
+            this.sale = this.id.equals(halfItems[i]);
+        });
+    }
+
     public void getItems() {
         String[] itemsArr = new String[3];
         IntStream.range(0, items.length).filter(i -> this.id.equals(items[i][1])).forEach(i -> {
