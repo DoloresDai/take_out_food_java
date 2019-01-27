@@ -2,25 +2,25 @@
  * This is a menu class, used to collect information about all dishes,
  * and can automatically generate the original price, preferential price.
  */
-public class Menu {
+public class Orders {
     int sumOriginalPrice;
     int sumHalfPrice;
     int sumLessPrice;
     StringBuffer halfItems = new StringBuffer();
 
-    Menu(String[] idArr, int[] numArr) {
+    Orders(String[] idArr, int[] numArr) {
         for (int j = 0; j < idArr.length; j++) {
-            Items item = new Items(idArr[j], numArr[j]);
-            item.getItems();
-            item.isHalf();
-            item.countOriginalPrice();
-            item.countHalfPrice();
-            Tool.print(item.name + " x " + item.num + " = " + String.valueOf(item.price * item.num) + "元");
-            this.sumOriginalPrice += item.originalPrice;
-            this.sumHalfPrice += item.halfPrice;
-            if (item.sale) {
+            Dishes dishes = new Dishes(idArr[j], numArr[j]);
+            dishes.getItems();
+            dishes.isHalf();
+            dishes.countOriginalPrice();
+            dishes.countHalfPrice();
+            Tool.print(dishes.name + " x " + dishes.num + " = " + String.valueOf(dishes.price * dishes.num) + "元");
+            this.sumOriginalPrice += dishes.originalPrice;
+            this.sumHalfPrice += dishes.halfPrice;
+            if (dishes.sale) {
                 try {
-                    halfItems = halfItems.append(item.name + ",");
+                    halfItems = halfItems.append(dishes.name + ",");
                 } catch (NullPointerException e) {
                     Tool.print("空指针" + e);
                 }
