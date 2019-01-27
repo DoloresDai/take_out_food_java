@@ -27,6 +27,10 @@ public class Items {
         });
     }
 
+    public void countOriginalPrice() {
+        this.originalPrice = this.price * this.num;
+    }
+
     public void getItems() {
         String[] itemsArr = new String[3];
         IntStream.range(0, items.length).filter(i -> this.id.equals(items[i][1])).forEach(i -> {
