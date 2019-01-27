@@ -38,4 +38,8 @@ public class Items {
     public void countOriginalPrice() {
         this.originalPrice = this.price * this.num;
     }
+
+    public void countHalfPrice() {
+        this.halfPrice = this.sale ? this.originalPrice / 2 : this.originalPrice;
+    }
 }
