@@ -7,9 +7,9 @@ public class BestCharge {
         int sumOriginalPrice = orders.sumOriginalPrice;
         int sumHalfPrice = orders.sumHalfPrice;
         int sumLessPrice = orders.sumLessPrice;
-        StringBuffer halfItems = orders.halfOrders;
+        StringBuffer halfOrders = orders.halfOrders;
         Tool.print("-----------------------------------");
-        printSaleDetails(sumHalfPrice, sumLessPrice, sumOriginalPrice, halfItems);
+        printSaleDetails(sumHalfPrice, sumLessPrice, sumOriginalPrice, halfOrders);
         Tool.print("===================================");
     }
 
@@ -25,11 +25,11 @@ public class BestCharge {
         return Tool.convertToIntArr(numStringArr);
     }
 
-    static void printSaleDetails(int sumHalfPrice, int sumLessPrice, int sumOriginalPrice, StringBuffer halfItems) {
+    static void printSaleDetails(int sumHalfPrice, int sumLessPrice, int sumOriginalPrice, StringBuffer halfDishes) {
         if (sumHalfPrice == sumLessPrice && sumHalfPrice == sumOriginalPrice) {
             Tool.print("总计：" + sumOriginalPrice + "元");
         } else if (sumHalfPrice < sumLessPrice) {
-            Tool.print("使用优惠：\n指定菜品半价(" + halfItems + ")，省" + String.valueOf(sumOriginalPrice - sumHalfPrice) + "元");
+            Tool.print("使用优惠：\n指定菜品半价(" + halfDishes + ")，省" + String.valueOf(sumOriginalPrice - sumHalfPrice) + "元");
             Tool.print("-----------------------------------");
             Tool.print("总计：" + sumHalfPrice + "元");
         } else {
