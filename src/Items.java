@@ -1,5 +1,7 @@
+import java.util.stream.IntStream;
+
 /**
- *Get all the information about individual dishes,
+ * Get all the information about individual dishes,
  * including name, id, price, quantity, half price or not,
  * and calculate the original price and half price.
  */
@@ -17,5 +19,13 @@ public class Items {
     Items(String id, int num) {
         this.id = id;
         this.num = num;
+    }
+
+    public void getItems() {
+        String[] itemsArr = new String[3];
+        IntStream.range(0, items.length).filter(i -> this.id.equals(items[i][1])).forEach(i -> {
+            this.name = items[i][0];
+            this.price = Integer.parseInt(items[i][2]);
+        });
     }
 }
