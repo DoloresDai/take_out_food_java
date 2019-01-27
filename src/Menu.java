@@ -35,5 +35,9 @@ public class Menu {
         }
         sumLessPrice = countLessPrice(sumOriginalPrice);
     }
+
+    static int countLessPrice(int originalPrice) {
+        return originalPrice >= 30 ? originalPrice - 6 : originalPrice;
+    }
 }
 
