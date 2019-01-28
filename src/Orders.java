@@ -27,11 +27,13 @@ public class Orders {
             }
         }
         try {
-            if (!halfOrders.equals("")) {
+            if (halfOrders.length() >= 1) {
                 halfOrders.setLength(halfOrders.length() - 1);
             }
         } catch (NullPointerException e) {
             Tool.print("空指针" + e);
+        } catch (StringIndexOutOfBoundsException s) {
+            Tool.print("越出索引边界" + s);
         }
         sumLessPrice = countLessPrice(sumOriginalPrice);
     }
