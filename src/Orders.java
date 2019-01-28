@@ -1,5 +1,5 @@
 /***
- * This is a menu class, used to collect information about all dishes,
+ * This is a order class, used to collect information about all dishes,
  * and can automatically generate the original price, preferential price.
  */
 public class Orders {
