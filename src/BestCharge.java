@@ -21,6 +21,11 @@ public class BestCharge {
     static int[] getDishesNum() {
         Tool.print("请输入菜品数量，以逗号分隔，例如1,2,3");
         String[] numStringArr = Tool.getControlStatic().split(",");
+        try {
+            Tool.convertToIntArr(numStringArr);
+        } catch (NumberFormatException e) {
+            System.out.println("输入格式错误，请重新输入");
+        }
         return Tool.convertToIntArr(numStringArr);
     }
 
