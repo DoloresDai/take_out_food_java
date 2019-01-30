@@ -30,7 +30,13 @@ public class Tool {
      * @param - Console input string
      * @return String
      */
-    static Scanner getControlStatic() {
-        return new Scanner(System.in);
+    static String getControlStatic() throws InputNullException {
+        String input = new Scanner(System.in).nextLine();
+        if (input.equals("")) {
+            throw new InputNullException("输入为空，请重新输入");
+        }
+        return input;
     }
 }
+
+
