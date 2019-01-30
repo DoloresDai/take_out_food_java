@@ -15,12 +15,12 @@ public class BestCharge {
 
     static String[] getDishesId() {
         Tool.print("请输入菜品id，以逗号分隔，例如ITEM0001,ITEM0013,ITEM0022");
-        return Tool.getControlState().split(",");
+        return Tool.getControlInput().split(",");
     }
 
     static int[] getDishesNum() {
         Tool.print("请输入菜品数量，以逗号分隔，例如1,2,3");
-        String[] numStringArr = Tool.getControlState().split(",");
+        String[] numStringArr = Tool.getControlInput().split(",");
         try {
             Tool.convertToIntArr(numStringArr);
         } catch (NumberFormatException e) {

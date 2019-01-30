@@ -30,7 +30,7 @@ public class Tool {
      * @param - Console input string
      * @return String
      */
-    static String getControlState() throws InputNullException {
+    static String getControlInput() throws InputNullException {
         String input = new Scanner(System.in).nextLine();
         if (input.equals("")) {
             throw new InputNullException("输入为空，请重新输入");
