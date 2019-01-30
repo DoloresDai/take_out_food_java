@@ -24,7 +24,7 @@ public class BestCharge {
         try {
             Tool.convertToIntArr(numStringArr);
         } catch (NumberFormatException e) {
-            System.out.println("输入格式错误，请重新输入");
+            System.out.println("数量输入错误，请重新输入");
         }
         return Tool.convertToIntArr(numStringArr);
     }
