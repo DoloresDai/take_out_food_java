@@ -6,6 +6,9 @@ import java.util.Scanner;
  * @version 1.0
  */
 public class Tool {
+    private Tool() {
+    }
+
     /**
      * @param arr Any string you want to print；
      * @return null
