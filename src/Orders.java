@@ -15,6 +15,7 @@ public class Orders {
             dish.isHalf();
             dish.countOriginalPrice();
             dish.countHalfPrice();
+            if(dish.name==null)throw new InputWrongException("输入id有误，请重新输入");
             Tool.print(dish.name + " x " + dish.num + " = " + String.valueOf(dish.price * dish.num) + "元");
             this.sumOriginalPrice += dish.originalPrice;
             this.sumHalfPrice += dish.halfPrice;
