@@ -10,6 +10,7 @@ public class Tool {
     }
 
     /**
+     * Print contents.
      * @param arr Any string you want to print；
      * @return null
      */
@@ -18,6 +19,7 @@ public class Tool {
     }
 
     /**
+     * Converting string[] to int[]
      * @param numStringArr - Numbers stored in strings;
      * @return - Array converted to numerical form
      */
@@ -30,6 +32,7 @@ public class Tool {
     }
 
     /**
+     * Get console input value.
      * @param - Console input string
      * @return String
      */
